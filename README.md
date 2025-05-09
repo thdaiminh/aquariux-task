@@ -32,15 +32,17 @@ npm install
 - Open `.env` in your project root.
 - Paste your OpenWeather API key for `VITE_OPENWEATHER_API_KEY`:
 
-  ```
+```
   VITE_OPENWEATHER_API_KEY=your_openweather_api_key_here
-  ```
+```
 
 ---
 
 ### Run the App in Development Mode
 
+```
 npm run dev
+```
 
 
 - Open [http://localhost:8080](http://localhost:8080) to view the app in your browser.
