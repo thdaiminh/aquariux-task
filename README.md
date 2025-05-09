@@ -1,54 +1,88 @@
-# React + TypeScript + Vite
+# Aquariux Technical Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern weather dashboard widget built with React and TypeScript, powered by the OpenWeather API.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Get Started
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [Node.js](https://nodejs.org/) v20 or higher
+- [npm](https://www.npmjs.com/) v9 or higher
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Setup Instructions
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Clone the repository**
+ ```
+git clone https://github.com/yourusername/your-repo.git
+cd your-repo
+ ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+2. **Copy the environment variables file and install dependencies**
+ ```
+cp .env.example .env
+npm install
+ ```
+
+3. **Add your OpenWeather API key**
+
+- Open `.env` in your project root.
+- Paste your OpenWeather API key for `VITE_OPENWEATHER_API_KEY`:
+
+  ```
+  VITE_OPENWEATHER_API_KEY=your_openweather_api_key_here
+  ```
+
+---
+
+### Run the App in Development Mode
+
+npm run dev
+
+
+- Open [http://localhost:8080](http://localhost:8080) to view the app in your browser.
+
+---
+
+## 📝 Project Features
+
+This project fulfills the following requirements:
+
+- **Current Weather Summary**
+    - Displays the current date, weather icon, temperature, and description.
+    - Shows humidity, wind speed (with arrow direction), and visibility.
+
+- **5-Day Forecast (3-Hour Intervals)**
+    - Forecast data is grouped by day (today and subsequent days).
+    - Each entry includes time (24h), weather icon, max/min temperature, and description.
+
+- **Search & History**
+    - Search by city or country.
+    - Search history is stored in the browser and can be managed (select or delete).
+    - Clicking a history item updates the weather details.
+    - Invalid searches display an error message.
+
+- **UI/UX**
+    - Responsive design for desktop and mobile.
+    - Weather icons from OpenWeather.
+    - Wind direction arrow styled per OpenWeather's approach.
+    - Accessible and user-friendly interface.
+
+- **Code Quality**
+    - Modular, scalable, and readable code structure.
+    - Secure API key handling via environment variables.
+    - Error handling for all API calls.
+    - Local storage encryption for search history (if implemented).
+
+---
+
+## 📦 Available Scripts
+
+- `npm run dev` - Start the development server.
+- `npm run build` - Build the app for production.
+- `npm run preview` - Preview the production build locally.
+
+---
